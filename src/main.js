@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
+import './plugins/element'
 
 import './assets/reset.css'
 import './assets/border.css'

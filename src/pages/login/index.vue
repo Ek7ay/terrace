@@ -1,10 +1,16 @@
 <template>
-  <div>初始化项目，less，reset，border，fastclick</div>
+  <div>
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
+  </div>
 </template>
 
 <script>
     export default {
-        name: "Login"
+        data () {
+          return {
+            input: ''
+          }
+        }
     }
 </script>
 
