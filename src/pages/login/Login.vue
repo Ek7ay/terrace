@@ -40,10 +40,11 @@
             this.$refs.loginRuleForm.validate((valid) => {
               if (valid) {
                 pwdLogin().then(res => {
-                  // if (res.success) {
-                  //
-                  // }
-                  console.log(res)
+                  console.log(res);
+                  if (res.success_code === 200) {
+                    this.$store.dispatch('savePhone', res.data.ph); //向store中存值
+                    this.$router.push({ path:'/home'});
+                  }
                 })
               } else {
                 console.log('error submit!!');

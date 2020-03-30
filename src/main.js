@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 import './plugins/element'
+import store from "./store";
 
 import './assets/reset.css'
 import './assets/border.css'
@@ -15,6 +16,7 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
