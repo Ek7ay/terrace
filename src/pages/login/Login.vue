@@ -17,6 +17,7 @@
 </template>
 
 <script>
+    import { pwdLogin } from '../../serve/index.js';
     export default {
         data () {
           return {
@@ -38,7 +39,12 @@
           login () {
             this.$refs.loginRuleForm.validate((valid) => {
               if (valid) {
-                alert('submit!');
+                pwdLogin().then(res => {
+                  // if (res.success) {
+                  //
+                  // }
+                  console.log(res)
+                })
               } else {
                 console.log('error submit!!');
                 return false;
