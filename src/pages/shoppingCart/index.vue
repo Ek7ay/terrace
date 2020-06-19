@@ -1,10 +1,14 @@
 <template>
-    <div>hello world2</div>
+    <div>购物车</div>
 </template>
 
 <script>
     export default {
-        name: "demo2"
+        data () {
+          return {
+
+          }
+        }
     }
 </script>
 
