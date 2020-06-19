@@ -43,6 +43,7 @@
                   console.log(res);
                   if (res.success_code === 200) {
                     this.$store.dispatch('savePhone', res.data.ph); //向store中存值
+                    this.$store.dispatch('saveUser', res.data.user_name);
                     this.$router.push({ path:'/home'});
                   }
                 })
