@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '../pages/login/Login'
 import home from '../pages/home/Home'
-import demo1 from "../pages/demo1/demo1"
+import talented from "../pages/talented"
 import shoppingCart from "../pages/shoppingCart"
-import demo3 from "../pages/demo3/demo3"
+import talented2 from "../pages/talented2"
 Vue.use(Router);
 
 export default new Router({
@@ -20,18 +20,18 @@ export default new Router({
       component: home,
       children: [
         {
-          path: "demo1",
-          component: demo1
-        },
-        {
           path: "/",
           component: shoppingCart
         },
         {
-          path: "demo3",
-          component: demo3
+          path: "talented",
+          component: talented
+        },
+        {
+          path: "talented2",
+          component: talented2
         }
       ]
-    },
+    }
   ]
 })

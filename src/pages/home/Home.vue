@@ -11,7 +11,6 @@
       <div class="menu">
         <el-menu
           :router="true"
-          default-active="/home"
           @open="handleOpen"
           @close="handleClose">
           <el-submenu
@@ -19,15 +18,15 @@
           >
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span>导航一</span>
+              <span>组件封装</span>
             </template>
-            <el-menu-item index="/home/demo1">选项1</el-menu-item>
             <el-menu-item index="/home">购物车</el-menu-item>
-            <el-menu-item index="/home/demo3">选项3</el-menu-item>
+            <el-menu-item index="/home/talented">封装input传状态</el-menu-item>
+            <el-menu-item index="/home/talented2">封装input用插槽</el-menu-item>
           </el-submenu>
           <el-menu-item index="2">
             <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
+            <span slot="title">数据表格，表单</span>
           </el-menu-item>
           <el-menu-item index="3">
             <i class="el-icon-document"></i>
