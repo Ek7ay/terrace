@@ -7,7 +7,7 @@
         >
             <span>{{item.name}}</span>----
             <span>{{item.price}}</span>
-            <a href="javascript:;">加入购物车</a>
+            <a href="javascript:;" @click="addCommodity(item.id)">加入购物车</a>
         </div>
     </div>
 </template>
@@ -16,6 +16,11 @@
     export default {
         props: {
             info: {}
+        },
+        methods: {
+            addCommodity (id) {
+                this.$emit("getId", id)
+            }
         }
     }
 </script>

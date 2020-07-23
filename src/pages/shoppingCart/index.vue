@@ -74,7 +74,6 @@
         },
         methods: {
           addToCard(id) {
-            console.log(id);
             const res = this.shoppingCard.find(item => id === item.id);
             if (res) {
               res.num++;
@@ -87,7 +86,6 @@
             })
           },
           deleteToCard(id) {
-            console.log(id);
             const res = this.shoppingCard.find(item => id === item.id);
             res.num--;
             if (res.num <= 0) {

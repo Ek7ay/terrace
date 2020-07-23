@@ -1,9 +1,17 @@
 <template>
     <div class="cart-box">
         <h1>商品列表</h1>
-        <commodity :info="commodity"/>
+        <commodity
+            :info="commodity"
+            @getId="addToCart"
+        />
         <h1 class="cart">购物车</h1>
-        <card />
+        <card
+            :info="list"
+            @getId="addToCart"
+            @delId="delToCart"
+        />
+        <div class="total">总价：{{total}}元</div>
     </div>
 </template>
 
@@ -40,6 +48,50 @@
         components: {
             commodity,
             card
+        },
+        computed: {
+            list () {
+                return this.cartList.map((item, index) => {
+                    const listItem = this.commodity.find(prditem => {
+                        return  item.id === prditem.id
+                    })
+                    return {
+                        ...listItem,
+                        num: item.num
+                    }
+                })
+            },
+            total () {
+                return this.list.reduce((x, y) => {
+                    return x + y.num*y.price
+                }, 0)
+            }
+        },
+        methods: {
+            addToCart(id) {
+                const isIdItem = this.cartList.find(item => {
+                    return item.id === id;
+                })
+                if(isIdItem) {
+                    isIdItem.num ++
+                } else {
+                    this.cartList.push({
+                        id: id,
+                        num: 1
+                    })
+                }
+            },
+            delToCart(id) {
+                const res = this.cartList.find(item => {
+                    return item.id === id
+                })
+                res.num --;
+                if(res.num <= 0) {
+                    this.cartList = this.cartList.filter((item, index) => {
+                        return item.id !== id;
+                    })
+                }
+            }
         }
     }
 </script>
@@ -53,6 +105,9 @@
         }
         .cart {
             margin-top: 50px;
+        }
+        .total {
+            margin-top: 10px;
         }
     }
 </style>
