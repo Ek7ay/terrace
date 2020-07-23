@@ -5,6 +5,7 @@ import home from '../pages/home/Home'
 import talented from "../pages/talented"
 import shoppingCart from "../pages/shoppingCart"
 import talented2 from "../pages/talented2"
+import scExercise from '../pages/shopping-cart-exercise'
 Vue.use(Router);
 
 export default new Router({
@@ -30,6 +31,10 @@ export default new Router({
         {
           path: "talented2",
           component: talented2
+        },
+        {
+          path: "scExercise",
+          component: scExercise
         }
       ]
     }

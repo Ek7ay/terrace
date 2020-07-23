@@ -28,10 +28,16 @@
             <i class="el-icon-menu"></i>
             <span slot="title">数据表格，表单</span>
           </el-menu-item>
-          <el-menu-item index="3">
-            <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
-          </el-menu-item>
+          <el-submenu
+            index="3"
+          >
+            <template slot="title">
+              <i class="el-icon-document"></i>
+              <span>练习</span>
+            </template>
+            <el-menu-item index="/home/scExercise">购物车练习</el-menu-item>
+          </el-submenu>
+
         </el-menu>
       </div>
       <div class="subject">
