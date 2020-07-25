@@ -26,10 +26,18 @@
                     <el-menu-item index="/home/toDoList">to-do-list</el-menu-item>
                     <el-menu-item index="/home/toDoVuex">to-do-list-vuex</el-menu-item>
                 </el-submenu>
-                <el-menu-item index="2">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">数据表格，表单</span>
-                </el-menu-item>
+                <el-submenu
+                        index="2"
+                >
+                    <template slot="title">
+                        <i class="el-icon-paperclip"></i>
+                        <span>表单表格</span>
+                    </template>
+                    <el-menu-item index="/home/dataForm">
+                        <i class="el-icon-mobile"></i>
+                        <span slot="title">数据表单</span>
+                    </el-menu-item>
+                </el-submenu>
                 <el-submenu
                     index="3"
                 >
@@ -39,7 +47,10 @@
                     </template>
                     <el-menu-item index="/home/scExercise">购物车练习</el-menu-item>
                 </el-submenu>
-
+                <el-menu-item index="4">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">示例菜单</span>
+                </el-menu-item>
             </el-menu>
         </div>
         <div class="subject">
