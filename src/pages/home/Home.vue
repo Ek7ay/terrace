@@ -37,6 +37,10 @@
                         <i class="el-icon-mobile"></i>
                         <span slot="title">数据表单</span>
                     </el-menu-item>
+                    <el-menu-item index="/home/dataTable">
+                        <i class="el-icon-s-marketing"></i>
+                        <span slot="title">数据表格</span>
+                    </el-menu-item>
                 </el-submenu>
                 <el-submenu
                     index="3"

@@ -9,6 +9,7 @@ import scExercise from '../pages/shopping-cart-exercise'
 import toDoList from '../pages/to-do-list'
 import toDoVuex from '../pages/to-do-list-vuex'
 import dataForm from '../pages/data-form'
+import dataTable from '../pages/data-table'
 
 Vue.use(Router);
 
@@ -51,6 +52,10 @@ export default new Router({
                 {
                     path: "dataForm",
                     component: dataForm
+                },
+                {
+                    path: "dataTable",
+                    component: dataTable
                 }
             ]
         }
