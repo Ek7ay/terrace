@@ -7,6 +7,7 @@ import shoppingCart from "../pages/shoppingCart"
 import talented2 from "../pages/talented2"
 import scExercise from '../pages/shopping-cart-exercise'
 import toDoList from '../pages/to-do-list'
+import toDoVuex from '../pages/to-do-list-vuex'
 
 Vue.use(Router);
 
@@ -41,6 +42,10 @@ export default new Router({
                 {
                     path: "toDoList",
                     component: toDoList
+                },
+                {
+                    path: "toDoVuex",
+                    component: toDoVuex
                 }
             ]
         }
