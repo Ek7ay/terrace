@@ -140,6 +140,6 @@
         left: 200px;
         right: 0;
         bottom: 0;
-        background: #eee;
+        background: white;
     }
 </style>
