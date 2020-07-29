@@ -13,9 +13,7 @@
                 :router="true"
                 @open="handleOpen"
                 @close="handleClose">
-                <el-submenu
-                    index="1"
-                >
+                <el-submenu index="1">
                     <template slot="title">
                         <i class="el-icon-location"></i>
                         <span>组件封装</span>
@@ -26,9 +24,8 @@
                     <el-menu-item index="/home/toDoList">to-do-list</el-menu-item>
                     <el-menu-item index="/home/toDoVuex">to-do-list-vuex</el-menu-item>
                 </el-submenu>
-                <el-submenu
-                        index="2"
-                >
+
+                <el-submenu index="2">
                     <template slot="title">
                         <i class="el-icon-paperclip"></i>
                         <span>表单表格</span>
@@ -42,15 +39,23 @@
                         <span slot="title">数据表格</span>
                     </el-menu-item>
                 </el-submenu>
-                <el-submenu
-                    index="3"
-                >
+
+                <el-submenu index="3">
+                    <template slot="title">
+                        <i class="el-icon-s-operation"></i>
+                        <span>基本功能</span>
+                    </template>
+                    <el-menu-item index="/home/routing1">路由传参</el-menu-item>
+                </el-submenu>
+
+                <el-submenu index="4">
                     <template slot="title">
                         <i class="el-icon-document"></i>
                         <span>练习</span>
                     </template>
                     <el-menu-item index="/home/scExercise">购物车练习</el-menu-item>
                 </el-submenu>
+
                 <el-menu-item index="/home/scExercise">
                     <i class="el-icon-menu"></i>
                     <span slot="title">示例菜单</span>
