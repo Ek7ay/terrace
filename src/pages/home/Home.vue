@@ -56,9 +56,9 @@
                     <el-menu-item index="/home/scExercise">购物车练习</el-menu-item>
                 </el-submenu>
 
-                <el-menu-item index="/home/scExercise">
+                <el-menu-item index="/home/experiment">
                     <i class="el-icon-menu"></i>
-                    <span slot="title">示例菜单</span>
+                    <span slot="title">实验</span>
                 </el-menu-item>
             </el-menu>
         </div>
