@@ -17,7 +17,7 @@
     export default {
         data () {
             return {
-                inputValue: '',
+                inputValue: '换密钥测试',
                 list: []
             }
         },
