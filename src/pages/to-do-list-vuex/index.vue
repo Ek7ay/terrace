@@ -17,7 +17,7 @@
     export default {
         data () {
             return {
-                inputValue: '换密钥测试',
+                inputValue: '又换了一次密钥',
                 list: []
             }
         },
