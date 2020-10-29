@@ -57,7 +57,19 @@ export default {
         {
           id: "2",
           name: "风险预警",
-          path: "/home/WarningQuery"
+          path: "/home/WarningQuery",
+          children: [
+            {
+              id: '33',
+              name: '大哥',
+              path: "/大哥",
+            },
+            {
+              id: '34',
+              name: '二哥',
+              path: "/二哥",
+            }
+          ]
         },
         {
           id: "3",
