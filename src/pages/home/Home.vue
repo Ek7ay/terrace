@@ -23,6 +23,7 @@
                     <el-menu-item index="/home/talented2">封装input用插槽</el-menu-item>
                     <el-menu-item index="/home/toDoList">to-do-list</el-menu-item>
                     <el-menu-item index="/home/toDoVuex">to-do-list-vuex</el-menu-item>
+                    <el-menu-item index="/home/tab">tab-children</el-menu-item>
                 </el-submenu>
 
                 <el-submenu index="2">

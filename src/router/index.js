@@ -13,67 +13,72 @@ import dataTable from '../pages/data-table'
 import routing1 from '../pages/routing-parameters'
 import routing2 from "../pages/routing-parameters/routing2";
 import experiment from '../pages/experiment'
+import tab from "../pages/tab-children/tab";
 
 Vue.use(Router);
 
 export default new Router({
-    routes: [
+  routes: [
+    {
+      path: '/',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: home,
+      children: [
         {
-            path: '/',
-            name: 'login',
-            component: login
+          path: "/",
+          component: shoppingCart
         },
         {
-            path: '/home',
-            name: 'home',
-            component: home,
-            children: [
-                {
-                    path: "/",
-                    component: shoppingCart
-                },
-                {
-                    path: "talented",
-                    component: talented
-                },
-                {
-                    path: "talented2",
-                    component: talented2
-                },
-                {
-                    path: "scExercise",
-                    component: scExercise
-                },
-                {
-                    path: "toDoList",
-                    component: toDoList
-                },
-                {
-                    path: "toDoVuex",
-                    component: toDoVuex
-                },
-                {
-                    path: "dataForm",
-                    component: dataForm
-                },
-                {
-                    path: "dataTable",
-                    component: dataTable
-                },
-                {
-                    path: "routing1",
-                    name: "routing1",
-                    component: routing1
-                },
-                {
-                    path: "routing2",
-                    component: routing2
-                },
-                {
-                    path: "experiment",
-                    component: experiment
-                }
-            ]
-        }
-    ]
+          path: "talented",
+          component: talented
+        },
+        {
+          path: "talented2",
+          component: talented2
+        },
+        {
+          path: "scExercise",
+          component: scExercise
+        },
+        {
+          path: "toDoList",
+          component: toDoList
+        },
+        {
+          path: "toDoVuex",
+          component: toDoVuex
+        },
+        {
+          path: "dataForm",
+          component: dataForm
+        },
+        {
+          path: "dataTable",
+          component: dataTable
+        },
+        {
+          path: "routing1",
+          name: "routing1",
+          component: routing1
+        },
+        {
+          path: "routing2",
+          component: routing2
+        },
+        {
+          path: "experiment",
+          component: experiment
+        },
+        {
+          path: "tab",
+          component: tab
+        },
+      ]
+    }
+  ]
 })
