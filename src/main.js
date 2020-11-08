@@ -7,6 +7,9 @@ import fastClick from 'fastclick'
 import './plugins/element'
 import store from "./store";
 
+import axios from 'axios'
+Vue.prototype.$axios = axios
+
 import './assets/reset.css'
 import './assets/border.css'
 

@@ -1,32 +1,29 @@
 <template>
-    <div class="experiment">
-        <child ref="child"></child>
-        <el-button @click="doSomething" type="primary" plain>主要按钮</el-button>
-    </div>
+  <div>map</div>
 </template>
 
 <script>
-    import child from "./child";
-    export default {
-        data () {
-            return {
-                count: 10
-            }
-        },
-        components: {
-            child
-        },
-        methods: {
-            doSomething () {
-                let res = this.$refs.child.info
-                console.log(res)
-            }
-        }
-    }
+export default {
+  data() {
+    return {
+      count: 10,
+    };
+  },
+  mounted() {
+    this.$axios
+      .get(
+        "https://restapi.amap.com/v3/config/district?keywords=山西&subdistrict=0&extensions=base&key=fe48ecd68942a050e7a3a6ba5a43340a"
+      )
+      .then(res => {
+        console.log(res)
+      })
+      .catch(res => {
+        console.log(res);
+      });
+  },
+  methods: {},
+};
 </script>
 
 <style lang="less" scoped>
-    .experiment {
-        padding: 30px;
-    }
 </style>
