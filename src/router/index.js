@@ -14,6 +14,10 @@ import routing1 from '../pages/routing-parameters'
 import routing2 from "../pages/routing-parameters/routing2";
 import experiment from '../pages/experiment'
 import tab from "../pages/tab-children/tab";
+import watch from "../pages/watch"
+import deepWatch from "../pages/deepWatch"
+import scroll from '../pages/scroll'
+
 
 Vue.use(Router);
 
@@ -77,6 +81,22 @@ export default new Router({
         {
           path: "tab",
           component: tab
+        },
+        {
+          path: "watch",
+          component: watch
+        },
+        {
+          path: "deepWatch",
+          component: deepWatch
+        },
+        {
+          path: "scroll",
+          component: scroll
+        },
+        {
+          path: "pieImg",
+          component: () => import('../pages/pie-img')
         },
       ]
     }

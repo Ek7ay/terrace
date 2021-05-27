@@ -7,6 +7,9 @@ import fastClick from 'fastclick'
 import './plugins/element'
 import store from "./store";
 
+import * as echarts from 'echarts'
+Vue.prototype.$echarts = echarts;
+
 import axios from 'axios'
 Vue.prototype.$axios = axios
 
