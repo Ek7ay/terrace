@@ -4,92 +4,109 @@
 
 <script>
 export default {
-  data () {
-    const trafficWay = [{
-      name: '优秀学生',
-      value: 80
-    }, {
-      name: '获得荣誉',
-      value: 80
-    }, {
-      name: '论文著作',
-      value: 80
-    }];
-
-    const data = [];
-    const color = ['#00ffff', '#00cfff', '#006ced', '#ffe000', '#ffa800', '#ff5b00', '#ff3000']
-    for (let i = 0; i < trafficWay.length; i++) {
-      data.push({
-        value: trafficWay[i].value,
-        name: trafficWay[i].name,
-        itemStyle: {
-          normal: {
-            borderWidth: 5,
-            shadowBlur: 20,
-            borderColor: color[i],
-            shadowColor: color[i]
-          }
-        }
-      }, {
-        value: 2,
-        name: '',
-        itemStyle: {
-          normal: {
-            label: {
-              show: false
-            },
-            labelLine: {
-              show: false
-            },
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 0, 0)',
-            borderWidth: 0
-          }
-        }
-      });
-    }
+  data() {
     return {
-      option: {
-        backgroundColor: '#0A2E5D',
-        color: color,
+      trafficWay: [
+        {
+          name: '优秀学生',
+          value: 20
+        }, {
+          name: '获得荣誉',
+          value: 10
+        }, {
+          name: '论文著作',
+          value: 30
+        }
+      ],
+      color: ['#00ffff', '#00cfff', '#006ced', '#ffe000', '#ffa800', '#ff5b00', '#ff3000'],
+      imgUrl: require("../../assets/img/do.png"),
+    }
+  },
+  computed: {
+    option() {
+      const data = [];
+      this.trafficWay.map((item, index) => {
+        data.push(
+          {
+            value: item.value,
+            name: item.name,
+            itemStyle: {
+              normal: {
+                borderWidth: 5,
+                shadowBlur: 20,
+                borderColor: this.color[index],
+                shadowColor: this.color[index],
+                borderRadius: 10,
+              }
+            }
+          },
+          {
+            value: 2,
+            name: '',
+            itemStyle: {
+              normal: {
+                label: {
+                  show: false
+                },
+                labelLine: {
+                  show: false
+                },
+                color: 'rgba(0, 0, 0, 0)',
+                borderColor: 'rgba(0, 0, 0, 0)',
+                borderWidth: 0
+              }
+            }
+          }
+        );
+      })
+      const that = this;
+      let img = new Image();
+      img.src = this.imgUrl;
+      return {
+        backgroundColor: '#fff',
+        color: this.color,
         title: {
-          text: '广州市天河区教学成果分析',
+          // text: '成果分析',
           top: '48%',
           textAlign: "center",
           left: "49%",
           textStyle: {
-            color: '#fff',
+            color: '#000',
             fontSize: 14,
             fontWeight: '400'
           }
         },
-        // graphic: {
-        //   elements: [{
-        //     type: "image",
-        //     z: 3,
-        //     style: {
-        //       image: img,
-        //       width: 178,
-        //       height: 178
-        //     },
-        //     left: 'center',
-        //     top: 'center',
-        //     position: [100, 100]
-        //   }]
-        // },
+        graphic: {
+          elements: [{
+            type: "image",
+            z: 3,
+            style: {
+              image: img,
+              width: 125,
+              height: 125
+            },
+            left: 'center',
+            top: 'center',
+            position: [100, 100]
+          }]
+        },
+        //鼠标hover提示
         tooltip: {
-          show: false
+          show: true
         },
         legend: {
           icon: "circle",
           orient: 'horizontal',
           // x: 'left',
-          data: ['优秀学生', '获得荣誉', '论文著作'],
+          // data: ['优秀学生', '获得荣誉', '论文著作'],
+          data: this.trafficWay.map(item => {
+            return item.name
+          }),
           right: 250,
           bottom: 100,
           align: 'right',
           textStyle: {
-            color: "#fff"
+            color: "#000"
           },
           itemGap: 20
         },
@@ -100,23 +117,23 @@ export default {
           name: '',
           type: 'pie',
           clockWise: false,
-          radius: [105, 109],
-          hoverAnimation: false,
+          radius: [105, 110],
+          hoverAnimation: false,   //hover时扇形是否变大
           itemStyle: {
             normal: {
               label: {
                 show: true,
                 position: 'outside',
-                color: '#ddd',
-                formatter: function(params) {
-                  var percent = 0;
-                  var total = 0;
-                  for (var i = 0; i < trafficWay.length; i++) {
-                    total += trafficWay[i].value;
+                color: '#000',
+                formatter: function (params) {
+                  let percent = 0;
+                  let total = 0;
+                  for (let i = 0; i < that.trafficWay.length; i++) {
+                    total += that.trafficWay[i].value;
                   }
                   percent = ((params.value / total) * 100).toFixed(0);
                   if (params.name !== '') {
-                    return   params.name + '\n' + '\n' + '占百分比：' + percent + '%';
+                    return params.name + '\n' + '\n' + '占百分比：' + percent + '%';
                   } else {
                     return '';
                   }
@@ -124,22 +141,23 @@ export default {
               },
               labelLine: {
                 length: 30,
-                length2: 100,
+                length2: 30,
                 show: true,
                 color: '#00ffff'
               }
             }
           },
-          data: data
+          data: data,
         }]
-      },
+      };
+
     }
   },
   mounted() {
     this.echartsInit();
   },
   methods: {
-    echartsInit () {
+    echartsInit() {
       const myEcharts = this.$echarts.init(this.$refs.echarts)
       myEcharts.setOption(this.option)
     }
