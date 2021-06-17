@@ -25,6 +25,7 @@
           <el-menu-item index="/home/toDoVuex">to-do-list-vuex</el-menu-item>
           <el-menu-item index="/home/tab">tab-children</el-menu-item>
           <el-menu-item index="/home/pieImg">带图片的饼图</el-menu-item>
+          <el-menu-item index="/home/d3">d3</el-menu-item>
         </el-submenu>
 
         <el-submenu index="2">
@@ -51,6 +52,8 @@
           <el-menu-item index="/home/watch">监听，深度监听，change事件</el-menu-item>
           <el-menu-item index="/home/deepWatch">监听和深度监听</el-menu-item>
           <el-menu-item index="/home/scroll">监听滚动条</el-menu-item>
+          <el-menu-item index="/home/bus1">bus1</el-menu-item>
+          <el-menu-item index="/home/bus2">bus2</el-menu-item>
         </el-submenu>
 
         <el-submenu index="4">
@@ -92,10 +95,10 @@ export default {
       this.$router.push({path: '/'})
     },
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     }
   }
 }

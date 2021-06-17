@@ -19,6 +19,9 @@ import './assets/border.css'
 fastClick.attach(document.body);
 Vue.config.productionTip = false;
 
+const bus = new Vue()
+Vue.prototype.$EventBus = bus;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

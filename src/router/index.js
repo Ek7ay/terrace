@@ -98,6 +98,18 @@ export default new Router({
           path: "pieImg",
           component: () => import('../pages/pie-img')
         },
+        {
+          path: "d3",
+          component: () => import('../pages/d3')
+        },
+        {
+          path: 'bus1',
+          component: () => import('../pages/bus/bus1')
+        },
+        {
+          path: 'bus2',
+          component: () => import('../pages/bus/bus2')
+        }
       ]
     }
   ]
